@@ -84,7 +84,7 @@ Leaving C++ aside for a moment,
 	\item Interfaces are abstract classes. But...an interface by definition
 	is there only to specify the behaviour of the class to the outside world. Not
 	to provide an implementation or maintain state (i.e., no attributes)
-	\item General consensus: an interface should consist of ONLY pure virtual functions
+	\item In general, an interface should consist of ONLY pure virtual functions
 	\begin{itemize}
 	\item As with many things in programming, this is a \textit{guideline}, not
 	an absolute rule.
@@ -94,21 +94,32 @@ Leaving C++ aside for a moment,
 
 \end{frame}
 
-\begin{frame}[c]{Examples of Usage}
-\begin{itemize}
-	\item Use when the relationship is "can be" rather than "is a"
-	\item It makes sense to have a banana inherit from plant.
-	\item It makes sense to have 
-\end{itemize}
-
+\begin{frame}[c]{Example: Mammal Hierarchy}
+What do these have in common? What do they \textit{not} have in common?
+\center
+\includegraphics[width=0.6\textwidth]{animal-hierarchy.pdf}
 \end{frame}
-\begin{frame}[c]{Working with Abstract Classes}
-\large
-\textbf{Let's do some coding examples:}
-\begin{enumerate}
-	\item Using just for common traits and behaviours
-	\item Using as a means of working with containers such as vectors
-\end{enumerate}
+
+\begin{frame}[c]{Example: Mammal Hierarchy}
+Behaviours that are not common to all in a hierarchy go in 
+an interface. We still need the \texttt{Mammal} abstract class
+to capture common traits and behaviour across the entire hierarchy
+\center \includegraphics[width=0.4\textwidth]{perform.pdf}
+\end{frame}
+\begin{frame}[c]{Some Ambiguous Cases}
+What say you? Is this the way?
+\begin{itemize}
+	\item Is \texttt{Vehicle} a base class or an interface?
+	\item More generally, should interfaces be nouns?
+\end{itemize}
+\vspace{0.2cm}
+The answer is not always clear. One way of thinking would be to use
+an abstract base class when you can say "is a" and an interface when you say
+"is".
+
+A cat \textit{is} pettable. You cannot say a cat "is a" pettable.\\
+\textbf{Remember:} In C++, this is mostly semantic. An interface \textit{is} an abstract base class.
+
 
 \end{frame}
 \end{document}
